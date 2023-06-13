@@ -40,7 +40,7 @@ func (mh *movieHandler) GetMovies(writer http.ResponseWriter, request *http.Requ
 		return
 	}
 
-	writer.Header().Set("Conent-Type", "application/json")
+	writer.Header().Set("Content-Type", "application/json")
 	writer.Write(jsonStr)
 }
 
@@ -77,7 +77,7 @@ func (mh *movieHandler) GetMovies(writer http.ResponseWriter, request *http.Requ
 /*
  *	Create movie
  *	localhost:8080/movies
- *	-d { "title": "SampelMovie" }
+ *	-d { "title": "SampleMovie" }
  */
  func (mh *movieHandler) CreateMovie(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
 	var movie model.Movie
@@ -105,7 +105,7 @@ func (mh *movieHandler) GetMovies(writer http.ResponseWriter, request *http.Requ
 /*
  *	Update movie by id
  *	localhost:8080/movies/:id
- *	-d { "title": "SampelMovie" }
+ *	-d { "title": "SampleMovie" }
  */
 func (mh *movieHandler) UpdateMovie(writer http.ResponseWriter, request *http.Request, ps httprouter.Params) {
 	id, _ := strconv.Atoi(ps.ByName("id"))
